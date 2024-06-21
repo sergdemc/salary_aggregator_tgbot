@@ -19,6 +19,8 @@ start_db_loader:
 
 load-data: start-mongo start_db_loader
 
+stop: stop-bot stop-mongo
+
 test: start-mongo
 	pytest -vv
 
