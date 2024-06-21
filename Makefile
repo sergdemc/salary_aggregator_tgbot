@@ -8,6 +8,14 @@ stop-mongo:
 down-mongo:
 	docker-compose down --volumes --remove-orphans
 
+start_db_loader:
+	python data_loader.py
+
+load-data: start-mongo start_db_loader
+
+test: start-mongo
+	pytest -vv
+
 requirements:
 	poetry export -f requirements.txt --output requirements.txt --without-hashes --with dev
 
