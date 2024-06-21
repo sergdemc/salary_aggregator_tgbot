@@ -8,6 +8,12 @@ stop-mongo:
 down-mongo:
 	docker-compose down --volumes --remove-orphans
 
+start-bot:
+	python bot.py
+
+stop-bot:
+	pkill -f "python bot.py"
+
 start_db_loader:
 	python data_loader.py
 
